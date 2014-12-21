@@ -69,4 +69,5 @@ func exitUsage(errs ...error) {
 
 beer-me <Caskfile>
 `)
+	os.Exit(1)
 }
