@@ -11,10 +11,16 @@ go get github.com/rafecolton/beer-me
 ``` bash
 # example usage: beer-me <Caskfile>
 
-beer-me Caskfile
+# default Caskfile is "Caskfile"
+beer-me
+
+# or specify a Caskfile
+beer-me Caskfile.local
 ```
 
 ## Example Caskfile
+
+Syntax is Gemfile-like
 
 ```ruby
 # comments like this
