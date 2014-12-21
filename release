@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -e
+readonly RELEASE_DIR="_release"
+
+main() {
+  make_release_dir
+  go build -o "$RELEASE_DIR/beer-me"
+  (cd $RELEASE_DIR && openssl sha256 -out beer-me-SHA256SUM beer-me)
+}
+
+make_release_dir() {
+  mkdir -p "$RELEASE_DIR"
+}
+
+main "$@"
