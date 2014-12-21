@@ -5,11 +5,13 @@ readonly RELEASE_DIR="_release"
 
 main() {
   make_release_dir
-  go build -o "$RELEASE_DIR/beer-me"
-  (cd $RELEASE_DIR && openssl sha256 -out beer-me-SHA256SUM beer-me)
+  local name="beer-me-$(git describe --always --dirty --tags)"
+  go build -o "$RELEASE_DIR/$name"
+  (cd $RELEASE_DIR && openssl sha256 -out "$name-SHA256SUM" "$name")
 }
 
 make_release_dir() {
+  rm -rf "$RELEASE_DIR"
   mkdir -p "$RELEASE_DIR"
 }
 
