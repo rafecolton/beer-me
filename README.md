@@ -2,6 +2,15 @@
 
 ## Installation
 
+Checksums available on the [releases page](https://github.com/rafecolton/beer-me/releases)
+
+```bash
+curl -sL https://github.com/rafecolton/beer-me/releases/download/v0.1.0/beer-me \
+  -o /usr/local/bin/beer-me && chmod +x /usr/local/bin/beer-me
+```
+
+or
+
 ```bash
 go get github.com/rafecolton/beer-me
 ```
