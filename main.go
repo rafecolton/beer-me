@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
-	"log"
 	"os"
 	"os/exec"
 	"strings"
@@ -11,15 +10,14 @@ import (
 
 func main() {
 	var args = os.Args
-	if len(args) != 2 {
-		usage()
-		os.Exit(1)
+	var caskfile = "Caskfile"
+	if len(args) > 1 {
+		caskfile = args[1]
 	}
 
-	var caskfile = os.Args[1]
 	contents, err := ioutil.ReadFile(caskfile)
 	if err != nil {
-		log.Fatalln(err)
+		exitUsage(err)
 	}
 
 	var brew = []string{"install"}
@@ -62,7 +60,11 @@ func main() {
 	}
 }
 
-func usage() {
+func exitUsage(errs ...error) {
+	for _, err := range errs {
+		fmt.Println(err.Error())
+	}
+
 	fmt.Println(`Usage:
 
 beer-me <Caskfile>
