@@ -5,7 +5,7 @@
 Checksums available on the [releases page](https://github.com/rafecolton/beer-me/releases)
 
 ```bash
-curl -sL https://github.com/rafecolton/beer-me/releases/download/v0.1.0/beer-me \
+curl -sL https://github.com/rafecolton/beer-me/releases/download/v0.1.0/beer-me-v0.1.0 \
   -o /usr/local/bin/beer-me && chmod +x /usr/local/bin/beer-me
 ```
 
