@@ -5,8 +5,9 @@
 Checksums available on the [releases page](https://github.com/rafecolton/beer-me/releases)
 
 ```bash
-curl -sL https://github.com/rafecolton/beer-me/releases/download/v0.1.0/beer-me-v0.1.0 \
-  -o /usr/local/bin/beer-me && chmod +x /usr/local/bin/beer-me
+export OUTDIR=/usr/local/bin && \
+  curl -sL https://github.com/rafecolton/beer-me/releases/download/v0.2.0/beer-me-v0.2.0 \
+  -o $OUTDIR/beer-me && chmod +x $OUTDIR/beer-me
 ```
 
 or
