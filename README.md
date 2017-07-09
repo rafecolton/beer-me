@@ -6,7 +6,7 @@ Checksums available on the [releases page](https://github.com/rafecolton/beer-me
 
 ```bash
 export OUTDIR=/usr/local/bin && \
-  curl -sL https://github.com/rafecolton/beer-me/releases/download/v0.2.0/beer-me-v0.2.0 \
+  curl -sL https://github.com/rafecolton/beer-me/releases/download/v0.2.1/beer-me-v0.2.1 \
   -o $OUTDIR/beer-me && chmod +x $OUTDIR/beer-me
 ```
 
@@ -36,11 +36,12 @@ Syntax is Gemfile-like
 # comments like this
 
 # add taps
-tap caskroom/cask
+tap git-duet/tap
 
 # install brews
 brew tmux
 brew reattach-to-user-namespace
+brew git-duet
 brew mercurial
 brew gnu-sed # comments can go here too
 brew gnu-tar
