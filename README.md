@@ -33,8 +33,11 @@ Syntax is Gemfile-like
 
 ```ruby
 # comments like this
-brew caskroom/cask/brew-cask
 
+# add taps
+tap caskroom/cask
+
+# install brews
 brew tmux
 brew reattach-to-user-namespace
 brew mercurial
@@ -44,6 +47,7 @@ brew autoenv
 
 # blank lines are also OK
 
+# install casks
 cask caffeine
 cask vagrant
 cask virtualbox

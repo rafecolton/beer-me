@@ -22,6 +22,7 @@ func main() {
 
 	var brew = []string{"install"}
 	var cask = []string{"cask", "install"}
+	var tap = []string{"tap"}
 
 	for _, line := range strings.Split(string(contents), "\n") {
 		commentPos := strings.Index(line, "#")
@@ -47,12 +48,14 @@ func main() {
 			brew = append(brew, words[1])
 		case "cask":
 			cask = append(cask, words[1])
+		case "tap":
+			tap = append(tap, words[1])
 		default:
 			continue // should be error (invalid command)
 		}
 	}
 
-	for _, args := range [][]string{brew, cask} {
+	for _, args := range [][]string{tap, brew, cask} {
 		cmd := exec.Command("brew", args...)
 		cmd.Stdout = os.Stdout
 		cmd.Stderr = os.Stderr

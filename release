@@ -7,7 +7,7 @@ main() {
   make_release_dir
   local name="beer-me-$(git describe --always --dirty --tags)"
   go build -o "$RELEASE_DIR/$name"
-  (cd $RELEASE_DIR && openssl sha256 -out "$name-SHA256SUM" "$name")
+  (cd $RELEASE_DIR && openssl dgst -sha256 -out "$name-SHA256SUM" "$name")
 }
 
 make_release_dir() {
