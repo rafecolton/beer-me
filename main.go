@@ -22,7 +22,7 @@ func main() {
 
 	var brew = []string{"install"}
 	var cask = []string{"cask", "install"}
-	var tap = []string{"tap"}
+	var tap = []string{"tap", "caskroom/cask"}
 
 	for _, line := range strings.Split(string(contents), "\n") {
 		commentPos := strings.Index(line, "#")
