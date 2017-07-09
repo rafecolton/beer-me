@@ -56,10 +56,12 @@ func main() {
 	}
 
 	for _, args := range [][]string{tap, brew, cask} {
-		cmd := exec.Command("brew", args...)
-		cmd.Stdout = os.Stdout
-		cmd.Stderr = os.Stderr
-		cmd.Run()
+		if len(args) > 2 || (args[0] == "install" && len(args) > 1) {
+			cmd := exec.Command("brew", args...)
+			cmd.Stdout = os.Stdout
+			cmd.Stderr = os.Stderr
+			cmd.Run()
+		}
 	}
 }
 
