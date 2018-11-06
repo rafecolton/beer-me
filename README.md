@@ -6,7 +6,7 @@ Checksums available on the [releases page](https://github.com/rafecolton/beer-me
 
 ```bash
 export OUTDIR=/usr/local/bin && \
-  curl -sL https://github.com/rafecolton/beer-me/releases/download/v0.2.1/beer-me-v0.2.1 \
+  curl -sL https://github.com/rafecolton/beer-me/releases/download/v0.2.2/beer-me-v0.2.2 \
   -o $OUTDIR/beer-me && chmod +x $OUTDIR/beer-me
 ```
 
